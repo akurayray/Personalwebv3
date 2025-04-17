@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Web Personal Adi</title>
+
+  <!-- Font Minecraft -->
+  <link href="https://fonts.cdnfonts.com/css/minecraft-4" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Minecraft', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      color: #e0e1dd;
+    }
+
+    #loadingScreen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #0d1b2a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 9999;
+    }
+
+    #typingText {
+      font-size: 24px;
+      color: #e0e1dd;
+      border-right: 2px solid #e0e1dd;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 2s steps(12) 1s forwards;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 160px }
+    }
+
+    #content {
+      display: none;
+      padding: 40px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #profilePic img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #415a77;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    #projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project {
+      background-color: #1b263b;
+      padding: 20px;
+      border-radius: 10px;
+      width: 250px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(65, 90, 119, 0.3);
+    }
+
+    .project img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    #contact form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-family: 'Minecraft', sans-serif;
+    }
+
+    input[type="submit"] {
+      background-color: #415a77;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #1d3557;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div id="typingText">loading rek...</div>
+  </div>
+
+  <!-- Main Content -->
+  <div id="content">
+    <header>
+      <div id="profilePic">
+        <img src="https://cdn.discordapp.com/attachments/1301656313750884437/1362008790957817857/profile.png?ex=6800d508&is=67ff8388&hm=de57f42debfa0141f686b07f291235cc2654a1ea909fca71609d520e70b72a83&" />
+      </div>
+      <h1>Halo, saya Adi</h1>
+      <p>Selamat datang di web personal saya.</p>
+    </header>
+
+    <!-- Project Section -->
+    <section id="projects">
+      <div class="project">
+        <img src="https://cdn.discordapp.com/attachments/1301656313750884437/1362008553295970324/Screenshot_2025-04-16-17-15-22-25.jpg?ex=6800d4d0&is=67ff8350&hm=7b603d392fd426eece5325618bd55c62a834cbebcba2c83755c59a57039210e6&">
+        <h3>Brobot</h3>
+        <p>Bot yang akan saya update ketika ada waktu luang.</p>
+      </div>
+      <div class="project">
+        <img src="https://cdn.discordapp.com/attachments/1348265729111101471/1362282307029041253/Tak_berjudul85_20250415200325.png?ex=6801d3c3&is=68008243&hm=b4e83cbccbb837e5fdf8374d0e2d7cfa8d6247b5b0d72a78b25e3f8ed2ae6ccd&">
+        <h3>oc saya</h3>
+        <p>oc yang saya gambar dengan sepenuh hati.</p>
+      </div>
+      <div class="project">
+        <img src="https://cdn.discordapp.com/attachments/1348265729111101471/1362282890372841592/Screenshot_2025-04-17-11-25-16-32.jpg?ex=6801d44f&is=680082cf&hm=ae931b62df03c8fc97b2c75c5943b81c39ea71fb2ff8e03d1d15e06491989ad6&">
+        <h3>web ini</h3>
+        <p>Web yang susah payah saya buat.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2 style="text-align: center;">Kontak Saya</h2>
+      <form>
+        <input type="text" placeholder="Nama" required />
+        <input type="email" placeholder="Email" required />
+        <textarea rows="5" placeholder="Pesan" required></textarea>
+        <input type="submit" value="Kirim" />
+      </form>
+    </section>
+  </div>
+
+  <script>
+    window.onload = () => {
+      setTimeout(() => {
+        document.getElementById("loadingScreen").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }, 3000);
+    };
+  </script>
+</body>
+</html>
